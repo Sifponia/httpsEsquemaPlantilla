@@ -1,0 +1,58 @@
+[
+ {
+  "key": "request.host",
+  "type": "text",
+  "title": {
+   "en": "Host",
+   "es": "Dirección"
+  }
+ },
+ {
+  "key": "request.port",
+  "type": "integer",
+  "title": {
+   "en": "Port",
+   "es": "Puerto"
+  }
+ },
+ {
+  "key": "request.method",
+  "type": "select",
+  "title": {
+   "en": "Method",
+   "es": "Método"
+  }
+ },
+ {
+  "key": "request.uri",
+  "type": "text",
+  "title": {
+   "en": "URI",
+   "es": "URI"
+  }
+ },
+ {
+  "key": "request.ssl",
+  "type": "boolean",
+  "title": {
+   "en": "SSL",
+   "es": "SSL"
+  }
+ },
+ {
+  "key": "path.header",
+  "type": "object",
+  "title": {
+   "en": "Path header",
+   "es": "Ruta cabecera"
+  }
+ },
+ {
+  "key": "path.body",
+  "type": "object",
+  "title": {
+   "en": "Path data",
+   "es": "Ruta datos"
+  }
+ }
+]
