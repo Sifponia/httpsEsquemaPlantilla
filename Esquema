@@ -1,0 +1,112 @@
+{
+ "type": "object",
+ "$schema": "https://json-schema.org/draft/2019-09/schema",
+ "required": [
+  "request",
+  "path"
+ ],
+ "properties": {
+  "body": {
+   "type": "string",
+   "maxLength": 4096,
+   "minLength": 0
+  },
+  "form": {
+   "type": "object",
+   "patternProperties": {
+    ".*": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "path": {
+   "type": "object",
+   "required": [
+    "header",
+    "body"
+   ],
+   "properties": {
+    "body": {
+     "type": "string",
+     "default": "${isoTimestamp}/body.json"
+    },
+    "header": {
+     "type": "string",
+     "default": "${isoTimestamp}/header.json"
+    }
+   }
+  },
+  "query": {
+   "type": "object",
+   "patternProperties": {
+    ".*": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "options": {
+   "type": "object",
+   "properties": {
+    "userAgent": {
+     "type": "string",
+     "maxLength": 256,
+     "minLength": 1
+    },
+    "maxRedirects": {
+     "type": "integer",
+     "maximum": 20,
+     "minimum": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "request": {
+   "type": "object",
+   "required": [
+    "host",
+    "method",
+    "port",
+    "uri"
+   ],
+   "properties": {
+    "ssl": {
+     "type": "boolean"
+    },
+    "uri": {
+     "type": "string"
+    },
+    "host": {
+     "type": "string",
+     "format": "hostname",
+     "maxLength": 253,
+     "minLength": 1
+    },
+    "port": {
+     "type": "integer",
+     "maximum": 65535,
+     "minimum": 1
+    },
+    "method": {
+     "enum": [
+      "GET",
+      "POST",
+      "PUT"
+     ],
+     "type": "string"
+    },
+    "timeout": {
+     "type": "integer",
+     "maximum": 3600000,
+     "minimum": 10000
+    },
+    "followRedirects": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  }
+ },
+ "additionalProperties": false
+}
